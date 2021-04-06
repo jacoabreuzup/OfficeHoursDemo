@@ -1,0 +1,43 @@
+PODS:
+  - Beagle (1.6.2):
+    - Beagle/Beagle (= 1.6.2)
+  - Beagle/Beagle (1.6.2):
+    - YogaKit
+  - BeagleDefaults (1.6.0):
+    - Beagle
+  - BeagleScaffold (1.6.0):
+    - BeagleDefaults
+  - Yoga (1.14.0)
+  - YogaKit (1.18.1):
+    - Yoga (~> 1.14)
+
+DEPENDENCIES:
+  - BeagleScaffold
+  - YogaKit (from `https://github.com/ZupIT/YogaKit`)
+
+SPEC REPOS:
+  trunk:
+    - Beagle
+    - BeagleDefaults
+    - BeagleScaffold
+    - Yoga
+
+EXTERNAL SOURCES:
+  YogaKit:
+    :git: https://github.com/ZupIT/YogaKit
+
+CHECKOUT OPTIONS:
+  YogaKit:
+    :commit: 939ed55b23a687b91a378acfd80ca9e47bf1c000
+    :git: https://github.com/ZupIT/YogaKit
+
+SPEC CHECKSUMS:
+  Beagle: 9c52af647afc9434829cfe3a39150b2609dd6bf6
+  BeagleDefaults: 1bc70a23cc770d88306fc366d06dfbda5a2f5151
+  BeagleScaffold: 8cc1ccefa40285ea066c4f2c6136b72572efe7e0
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+  YogaKit: 3a733275fd1639b96a304f6f5c11421478371e6b
+
+PODFILE CHECKSUM: b35d3a4384883b34505bb1092cf61f24d03228ce
+
+COCOAPODS: 1.10.0
