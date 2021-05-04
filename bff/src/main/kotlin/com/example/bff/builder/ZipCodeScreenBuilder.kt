@@ -2,10 +2,7 @@ package com.example.bff.builder
 
 import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.Style
-import br.com.zup.beagle.ext.applyFlex
-import br.com.zup.beagle.ext.applyStyle
-import br.com.zup.beagle.ext.unitPercent
-import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.ext.*
 import br.com.zup.beagle.widget.action.*
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.core.*
@@ -29,10 +26,10 @@ data class Data(
 object ZipCodeScreenBuilder: ScreenBuilder {
 
     val styleMargin = Style(
-        margin = EdgeValue(
-            top = 10.unitReal(),
-            left = 25.unitReal(),
-            right = 25.unitReal()
+        margin = EdgeValue.only(
+            top = 10,
+            left = 25,
+            right = 25
         )
     )
 
@@ -47,14 +44,11 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                     children = listOf(
                         Text(
                             text = "Fill the form"
-                        ).applyStyle(
-                            Style(
-                                margin = EdgeValue(top = 20.unitReal(), bottom = 20.unitReal()),
-                                flex = Flex(
-                                    alignSelf = AlignSelf.CENTER
-                                )
-                            )
-                        ),
+                        ).setStyle {
+                            margin = EdgeValue.vertical(vertical = 20)
+                        }.setFlex {
+                            alignSelf = AlignSelf.CENTER
+                        },
                         createZip(),
                         createTextInput(),
                         createButton()
@@ -75,7 +69,9 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                     )
                 )
             )
-        ).applyFlex(Flex(grow = 1.0))
+        ).setFlex {
+            grow = 1.0
+        }
     )
 
     private fun createTextInput() = Container(
@@ -148,7 +144,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
 
             )
         )
-    ).applyStyle(styleMargin)
+    ).setStyle { styleMargin }
 
     private fun createButton() = Button(
         text = "Enviar",
@@ -170,19 +166,14 @@ object ZipCodeScreenBuilder: ScreenBuilder {
             ),
             Navigate.PushView(route = Route.Remote(url = "/details"))
         )
-    ).applyStyle(
-        Style(
-            backgroundColor = "#808080",
-            cornerRadius = CornerRadius(8.0),
-            size = Size(width = 50.unitPercent()),
-            margin = EdgeValue(
-                top = 30.unitReal()
-            ),
-            flex = Flex(
-                alignSelf = AlignSelf.CENTER
-            )
-        )
-    )
+    ).setStyle {
+        backgroundColor = "#808080"
+        cornerRadius = CornerRadius(8.0)
+        size = Size(width = UnitValue.percent(50))
+        margin = EdgeValue.only(top = 30)
+    }.setFlex {
+        alignSelf = AlignSelf.CENTER
+    }
 
     private fun createTextInput(
         textInputPlaceholder: String,
@@ -200,6 +191,6 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                 value = "@{onChange.value}"
             )
         )
-    ).applyStyle(styleMargin)
+    ).setStyle{ styleMargin }
 
 }
