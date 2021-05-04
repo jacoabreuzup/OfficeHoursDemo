@@ -8,7 +8,6 @@ target 'OfficeHoursDemo' do
   # Pods for OfficeHoursDemo
 	
 	pod 'BeagleScaffold'
-	pod 'YogaKit', :git => 'https://github.com/ZupIT/YogaKit'
 
   target 'OfficeHoursDemoTests' do
     inherit! :search_paths
