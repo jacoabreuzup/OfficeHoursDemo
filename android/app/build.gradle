@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "br.com.zup.beagle:android:1.6.1"
-    kapt "br.com.zup.beagle:android-processor:1.6.1"
-    implementation "br.com.zup.beagle:beagle-scaffold:1.6.0"
+    implementation "br.com.zup.beagle:android:1.7.0"
+    kapt "br.com.zup.beagle:android-processor:1.7.0"
+    implementation "br.com.zup.beagle:beagle-scaffold:1.7.0"
 }

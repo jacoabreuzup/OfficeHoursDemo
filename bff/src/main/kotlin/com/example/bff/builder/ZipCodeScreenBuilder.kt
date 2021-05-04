@@ -25,13 +25,11 @@ data class Data(
 
 object ZipCodeScreenBuilder: ScreenBuilder {
 
-    val styleMargin = Style(
-        margin = EdgeValue.only(
+    val styleMargin = EdgeValue.only(
             top = 10,
             left = 25,
             right = 25
         )
-    )
 
     override fun build() = Screen (
         navigationBar = NavigationBar(
@@ -144,7 +142,9 @@ object ZipCodeScreenBuilder: ScreenBuilder {
 
             )
         )
-    ).setStyle { styleMargin }
+    ).setStyle {
+        margin = styleMargin
+    }
 
     private fun createButton() = Button(
         text = "Enviar",
@@ -191,6 +191,8 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                 value = "@{onChange.value}"
             )
         )
-    ).setStyle{ styleMargin }
+    ).setStyle{
+        margin = styleMargin
+    }
 
 }
