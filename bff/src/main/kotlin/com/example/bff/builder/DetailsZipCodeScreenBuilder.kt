@@ -1,9 +1,7 @@
 package com.example.bff.builder
 
 import br.com.zup.beagle.core.Style
-import br.com.zup.beagle.ext.applyFlex
-import br.com.zup.beagle.ext.applyStyle
-import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.ext.*
 import br.com.zup.beagle.widget.context.Bind
 import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.AlignItems
@@ -47,22 +45,18 @@ object DetailsZipCodeScreenBuilder: ScreenBuilder {
                     text = expressionOf("Complement: @{global.data.complement}")
                 )
             )
-        ).applyFlex(Flex(
-            grow = 1.0,
-            justifyContent = JustifyContent.CENTER,
+        ).setFlex {
+            grow = 1.0
+            justifyContent = JustifyContent.CENTER
             alignItems = AlignItems.CENTER
-        ))
+        }
     )
 
     private fun createText(text: Bind<String>) = Text(
         text = text,
         styleId = "DesignSystem.Text"
-    ).applyStyle(Style(
-        margin = EdgeValue(
-            bottom = 10.unitReal()
-        )
-    ))
-
-
+    ).setStyle {
+        margin = EdgeValue.only(bottom = 10)
+    }
 
 }
