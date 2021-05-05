@@ -146,7 +146,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
     }
 
     private fun createButton() = Button(
-        text = "Enviar",
+        text = "Submit",
         onPress = listOf(
             SetContext(
                 contextId = "global",
