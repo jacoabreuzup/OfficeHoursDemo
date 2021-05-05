@@ -88,13 +88,12 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                             street = "@{onSuccess.data.logradouro}",
                             number = "@{address.data.number}",
                             neighborhood = "@{onSuccess.data.bairro}",
-                            city = "",
-                            state = "",
-                            complement = ""
+                            city = "@{onSuccess.data.localidade}",
+                            state = "@{onSuccess.data.uf}",
+                            complement = "@{onSuccess.data.complement}"
                         )
                     )
                 )
-
             )
         )
     )
