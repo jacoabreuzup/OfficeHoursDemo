@@ -48,7 +48,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                             alignSelf = AlignSelf.CENTER
                         },
                         createZip(),
-                        createTextInput(),
+                        createTextInputContainer(),
                         createButton()
                     ),
                     context = ContextData(
@@ -72,7 +72,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
         }
     )
 
-    private fun createTextInput() = Container(
+    private fun createTextInputContainer() = Container(
         children = listOf(
             createTextInput(
                 textInputPlaceholder = "Street",
@@ -135,7 +135,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
                             neighborhood = "@{onSuccess.data.bairro}",
                             city = "@{onSuccess.data.localidade}",
                             state = "@{onSuccess.data.uf}",
-                            complement = "@{address.data.complement}"
+                            complement = "@{onSuccess.data.complemento}"
                         )
                     )
                 )
@@ -148,7 +148,6 @@ object ZipCodeScreenBuilder: ScreenBuilder {
 
     private fun createButton() = Button(
         text = "Enviar",
-        styleId = "DesignSystem.Button",
         onPress = listOf(
             SetContext(
                 contextId = "global",
@@ -167,7 +166,7 @@ object ZipCodeScreenBuilder: ScreenBuilder {
             Navigate.PushView(route = Route.Remote(url = "/details"))
         )
     ).setStyle {
-        backgroundColor = "#808080"
+        backgroundColor = "#C3C2C4"
         cornerRadius = CornerRadius(8.0)
         size = Size(width = UnitValue.percent(50))
         margin = EdgeValue.only(top = 30)
