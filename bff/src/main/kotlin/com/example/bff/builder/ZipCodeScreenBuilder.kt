@@ -112,7 +112,6 @@ object ZipCodeScreenBuilder: ScreenBuilder {
         placeholder = "Zip",
         value = "@{address.data.zip}",
         type = TextInputType.NUMBER,
-        styleId = "DesignSystem.TextInput",
         onChange = listOf(
             SetContext(
                 contextId = "address",
